@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icons/zicon_white.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Eric Zipor</title>
+</head>
+<body>
+    <div id="logo">
+        <a href="#hero" onclick="scrollToTop(event, 'hero', 1000)"><img src="icons/zicon_zurple.png" draggable="false" /></a>
+    </div>
+
+    <nav>
+      <div class="tab-bar">
+          <a href="#hero" class="tab-button" onclick="scrollToTop(event, 'hero', 1000)">&gt;home</a>
+          <a href="#projects" class="tab-button" onclick="scrollToTop(event, 'projects', 100)">&gt;projects</a>
+          <a href="#contact" class="tab-button" onclick="scrollToTop(event, 'contact')">&gt;connect</a>
+          <a href="https://drive.google.com/file/d/112795ph3CqZ8SxG3uWUq_NsdVB5llJe9/view?usp=sharing" class="tab-button" target="_blank" rel="noopener noreferrer">&gt;resume</a>
+      </div>
+    </nav>
+  
+    
+    <script>
+      function scrollToTop(event, targetId, offset) {
+          event.preventDefault(); // Prevent the default hash fragment navigation
+          
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+              const offsetValue = offset || 0; // Default offset to 0 if not provided
+              const targetPosition = Math.max(targetElement.offsetTop - offsetValue, 0); // Ensure the target position is not less than 0
+              window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+          }
+      }
+    </script>
+
+    <div id="theme-toggle">
+        <img id="light-icon" src="icons/night.png" alt="Light Mode" title="Nox!" draggable="false">
+        <img id="dark-icon" src="icons/day.png" alt="Dark Mode" title="Lumos!" draggable="false">
+    </div>
+    <script src="scripts/theme-toggle.js"></script>
+
+    <screensection id="hero" class="hidden">
+        <div id="content">
+            <p>Hi! I'm a <span id="age"></span> year-old Fullstack Developer and Computer Engineer, pursuing undergraduate studies at the University of Virginia. </p>
+            <script src="scripts/age.js"></script>
+        </div>
+    </screensection>
+    
+    <section id="projects" class="hidden">
+      <h1>&gt;projects</h1>
+      <div class="product-cards">
+          <div class="product-card">
+              <div class="product-image">
+                  <img src="images/PhishHook-min.png" alt="PhishHook" draggable="false">
+              </div>
+              <div class="product-description">
+                  <p>A Chrome Extension to help detect phishing content in emails, links, and webpages. Equipped with AI and database analysis reeling in a safer browsing experience.
+                      <a href="https://ezipor.pythonanywhere.com/" target="_blank" draggable="false">Try it ↗</a>
+                  </p>
+              </div>
+          </div>
+          <div class="product-card">
+              <div class="product-image">
+                  <img src="images/Bitify-min.png" alt="Bitify" draggable="false">
+              </div>
+              <div class="product-description">
+                  <p>A web application that converts songs into nostalgic 8-bit music. Upload a MIDI file and transform soundwaves into chiptune with the click of a button.
+                      <a href="https://devpost.com/software/bitify" target="_blank" draggable="false">View it ↗</a>
+                  </p>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+    
+      <screensection id="contact" class="hidden">
+        <h1>&gt;connect</h1>
+        <div class="social-icons">
+          <a href="https://github.com/EricZoop" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github fa-2xl" style="color: #551a8b;" alt="Github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/eric-zipor/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin fa-2xl" style="color: #551a8b;" alt="Linked In"></i>
+          </a>
+          <a href="https://discordapp.com/users/215269534540496896" target="_blank">
+            <i class="fa-brands fa-discord fa-2xl" style="color: #551a8b;" alt="Discord"></i>
+          </a>
+          <a href="mailto:nrx2sy@virginia.edu" target="_blank" rel="noopener noreferrer">
+            <i class="fa-sharp fa-solid fa-envelope fa-2xl" style="color: #551a8b;" alt="Email"></i>
+          </a>
+        </div>
+      </screensection>
+    
+    <script src="scripts/swipe.js"></script>
+
+</body>
+</html>
